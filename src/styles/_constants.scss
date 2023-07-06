@@ -1,14 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
 
 // Colors
-$clr-very-dark-grey: hsl(0, 0%, 17%);
-$clr-dark-grey: hsl(0, 0%, 59%);
+$clr-primary-100: hsl(176, 50%, 47%);
+$clr-primary-200: hsl(176, 72%, 28%);
+
+$clr-neutral-100: hsl(0, 0%, 48%);
+$clr-neutral-200: hsl(0, 0%, 0%);
 
 // Font family
-$ff-rubik: 'Rubik', sans-serif;
+$ff-manrope: 'Manrope', sans-serif;
 
 // Font size(s)
-$fs-base: 18px;
+$fs-base: 1rem;
+$fs-medium: 1.5rem;
+$fs-large: 2rem;
+$fs-extralarge: 3rem;
 
 // Font weight(s)
 $fw-regular: 400;
@@ -16,12 +22,12 @@ $fw-bold: 500;
 $fw-extrabold: 700;
 
 // Sizes
-$size-100: .5rem;
-$size-200: .75rem;
-$size-300: 1rem;
-$size-400: 1.5rem;
-$size-500: 2rem;
-$size-600: 3rem;
-$size-700: 4rem;
-$size-800: 5rem;
-$size-900: 7rem;
+$size-100: .25rem;
+$size-200: .5rem;
+$size-300: .75rem;
+$size-400: 1rem;
+$size-500: 1.5rem;
+$size-600: 2rem;
+$size-700: 3rem;
+$size-800: 4rem;
+$size-900: 6rem;
