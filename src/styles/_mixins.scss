@@ -1,0 +1,23 @@
+@mixin min-max-width($type, $value) {
+    @media (#{$type}-width: #{$value}) {
+        @content
+    }
+};
+
+@mixin icon {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+@mixin flex-ac-jc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-ac-sb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

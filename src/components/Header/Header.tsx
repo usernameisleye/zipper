@@ -1,3 +1,5 @@
+import { FiMenu } from 'react-icons/fi'
+
 const Header = () => {
   return (
     <header className="header">
@@ -6,6 +8,10 @@ const Header = () => {
                 src="/logo.svg" 
                 alt="Logo" 
             />
+            
+            <button className="menu">
+                <FiMenu />
+            </button>
 
             <ul role="list">
                 <li>
