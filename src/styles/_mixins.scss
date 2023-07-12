@@ -10,10 +10,11 @@
     border: none;
 }
 
-@mixin flex-ac-jc {
+@mixin flex-ac-jc($gap) {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: #{$gap};
 }
 
 @mixin flex-ac-sb {
