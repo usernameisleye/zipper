@@ -2,3 +2,132 @@
 @import './constants';
 @import './resets';
 @import './mixins';
+
+// Components
+@import '../components/Filter/index';
+
+// Navbar
+header {
+    padding-inline: $size-600;
+    nav {
+        @include flex-ac-sb;
+        font-size: $fs-medium;
+        font-weight: $fw-medium;
+        padding-block: $size-500;
+
+        .text {
+            span:nth-child(2) {
+                color: $clr-primary;
+            }
+        }
+    }
+
+    .hero {
+        height: 70vmin;
+        overflow: hidden;
+        border-radius: $size-400;
+        background: url('/BG.png') no-repeat ;
+        padding: $size-400;
+
+        .container {
+            @include flex-ac-jc($size-600);
+            flex-direction: column;
+            text-align: center;
+            height: 100%;
+
+            h1 {
+                width: 50%;
+                color: white;
+                font-size: $fs-xl;
+                font-weight: $fw-bold;
+            }
+
+            .search_div {
+                width: 37%;
+                gap: $size-400;
+                padding: $size-200;
+                background: white;
+                @include flex-ac-sb;
+                font-weight: $fw-medium;
+                border-radius: $size-300;
+
+                &_input {
+                    position: relative;
+                    width: 70%;
+                    
+                    .icon {
+                        position: absolute;
+                        top: 50%;
+                        left: 2%;
+                        font-size: $size-400;
+                        transform: translateY(-50%);
+                    }
+
+                    input {
+                        padding-left: $size-600;
+                        padding-block: $size-400;
+                        outline: none;
+                        border: none;
+                        width: 90%;
+                    }
+                }
+
+                &_btn {
+                    padding: $size-400 $size-600;
+                    background: $clr-primary;
+                    border-radius: $size-300;
+                }
+            }
+        }
+    }
+}
+
+.content {
+    padding: $size-600;
+    &_header {
+        @include flex-ac-sb;
+        h2 {
+            font-size: $fs-large;
+            font-weight: $fw-semibold;
+        }
+
+        .filters {
+            @include flex-ac-jc($size-300);
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@include min-max-width(max, 50em) {
+    header {
+        nav {
+            font-size: $fs-base;
+        }
+
+        .hero {
+            .container {
+                h1 {
+                    font-size: $fs-large;
+                    width: 100%;
+                }
+                .search_div {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    .content {
+        &_header {
+            gap: $size-400;
+            flex-direction: column;
+            align-items: flex-start;
+            h2 {
+                font-size: $fs-medium;
+            }
+            .filters {
+                justify-content: flex-start;
+            }
+        }
+    }
+}

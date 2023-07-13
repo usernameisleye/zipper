@@ -1,0 +1,16 @@
+.filter {
+    .wrapper {
+        z-index: 10;
+        position: relative;
+        width: fit-content;
+    
+        &_select-btn {
+            @include flex-ac-jc($size-400);
+            padding: $size-300;
+            font-weight: $fw-medium;
+            border-radius: $size-200;
+            background: $clr-neutral-200;
+            min-width: $size-900;
+        }
+    }
+}

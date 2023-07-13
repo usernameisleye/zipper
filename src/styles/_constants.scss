@@ -1,7 +1,31 @@
-// Font weight(s)
-$fw-regular: 400;
-$fw-bold: 500;
-$fw-extrabold: 700;
+@font-face {
+    font-family: "Cabinet Grotesk";
+    font-weight: 100 900;
+    font-display: block;
+    font-style: normal;
+    src: url("/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+}
+
+// Colors
+$clr-primary: #DCFD88;
+$clr-neutral-100: #E3E6EA;
+$clr-neutral-200: #F7F8FA;
+$clr-neutral-300: #696F7A;
+$clr-neutral-400: #464A56;
+$clr-neutral-500: #0B0D14;
+
+$ff-cabinet-grotesk: "Cabinet Grotesk", sans-serif;
+
+// Font sizes
+$fs-base: 16px;
+$fs-medium: 20px;
+$fs-large: 32px;
+$fs-xl: 56px;
+
+// Font weights
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
 
 // Sizes
 $size-100: .25rem;
