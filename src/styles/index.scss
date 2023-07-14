@@ -5,15 +5,16 @@
 
 // Components
 @import '../components/Filter/index';
+@import '../components/Product/index';
 
 // Navbar
 header {
     padding-inline: $size-600;
     nav {
         @include flex-ac-sb;
-        font-size: $fs-medium;
         font-weight: $fw-medium;
         padding-block: $size-500;
+        font-size: clamp($fs-base, 3vw, $fs-medium);
 
         .text {
             span:nth-child(2) {
@@ -38,7 +39,7 @@ header {
             h1 {
                 width: 50%;
                 color: white;
-                font-size: $fs-xl;
+                font-size: clamp($fs-large, 5vw, $fs-xl);
                 font-weight: $fw-bold;
             }
 
@@ -76,6 +77,10 @@ header {
                     padding: $size-400 $size-600;
                     background: $clr-primary;
                     border-radius: $size-300;
+                    
+                    &:hover {
+                        filter: brightness(95%);
+                    }
                 }
             }
         }
@@ -87,13 +92,27 @@ header {
     &_header {
         @include flex-ac-sb;
         h2 {
-            font-size: $fs-large;
+            font-size: clamp($fs-medium, 2vw, $fs-large);
             font-weight: $fw-semibold;
         }
 
         .filters {
             @include flex-ac-jc($size-300);
             flex-wrap: wrap;
+        }
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: auto, minmax(100%, 1fr);
+        border: 1px solid $clr-neutral-100;
+        border-radius: $size-200;
+        margin-top: $size-500;
+
+        .product-wrapper {
+            overflow: hidden;
+            padding: $size-300;
+            border-bottom: 1px solid $clr-neutral-100;
         }
     }
 }
@@ -107,7 +126,6 @@ header {
         .hero {
             .container {
                 h1 {
-                    font-size: $fs-large;
                     width: 100%;
                 }
                 .search_div {
@@ -122,9 +140,7 @@ header {
             gap: $size-400;
             flex-direction: column;
             align-items: flex-start;
-            h2 {
-                font-size: $fs-medium;
-            }
+
             .filters {
                 justify-content: flex-start;
             }

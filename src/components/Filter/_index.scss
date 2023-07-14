@@ -1,16 +1,49 @@
 .filter {
     .wrapper {
-        z-index: 10;
+        // z-index: 10;
         position: relative;
         width: fit-content;
     
         &_select-btn {
             @include flex-ac-jc($size-400);
             padding: $size-300;
+            min-width: $size-900;
             font-weight: $fw-medium;
             border-radius: $size-200;
             background: $clr-neutral-200;
-            min-width: $size-900;
+
+            .title {
+                display: block;
+                text-overflow: ellipsis;
+            }
+        }
+
+        &_options {
+            position: absolute;
+            z-index: 50;
+            width: 100%;
+            overflow: auto;
+            list-style: none;
+            background: white;
+            border-radius: $size-200;
+            padding-block: $size-100;
+            max-height: $size-900 * 2;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+
+            .option {
+                position: relative;
+                cursor: pointer;
+                user-select: none;
+                padding: $size-100 $size-200;
+            }
+
+            // Conditional classes
+            .active-option {
+                background: $clr-primary;
+            }
+            .selected-option {
+                font-weight: $fw-medium;
+            }
         }
     }
 }

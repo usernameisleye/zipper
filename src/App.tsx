@@ -1,6 +1,12 @@
 import { useRef } from "react"
 import { FiSearch } from "react-icons/fi"
-import { Filter } from "./components"
+import { Filter, Product } from "./components"
+import { 
+  categories, 
+  ratings, 
+  price, 
+  score 
+} from "./constants"
 
 function App() {
   const ref = useRef(null)
@@ -48,20 +54,34 @@ function App() {
           <div className="filters">
             <Filter 
               title="Category" 
-              options={[{ key: "Category", value: "tech" }]} 
+              options={categories} 
             />
             <Filter 
               title="Price" 
-              options={[{ key: "Price", value: "price" }]} 
+              options={price} 
             />
             <Filter 
               title="Ratings" 
-              options={[{ key: "Ratings", value: "ratings" }]} 
+              options={ratings} 
             />
             <Filter 
               title="Score" 
-              options={[{ key: "Score", value: "score" }]} 
+              options={score} 
             />
+          </div>
+        </div>
+
+        <div className="products">
+          <div className="product-wrapper">
+            <Product />
+          </div>
+
+          <div className="product-wrapper">
+            <Product />
+          </div>
+
+          <div className="product-wrapper">
+            <Product />
           </div>
         </div>
       </section>

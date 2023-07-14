@@ -1,0 +1,75 @@
+.product {
+    background: $clr-neutral-200;
+    border-radius: $size-200;
+    padding: $size-400 $size-600;
+
+    &_top {
+        @include flex-ac-sb;
+        flex-wrap: wrap;
+        gap: $size-400;
+        padding-block: $size-400;
+
+        &_first {
+            @include flex-ac-jc($size-400);
+
+            .info {
+                font-weight: $fw-medium;
+                h4 {
+                    font-size: $fs-medium;
+                }
+
+                div {
+                    @include flex-ac-jc($size-200);
+
+                    .icon {
+                        color: $clr-accent;
+                    }
+
+                    .reviews {
+                        text-decoration: underline
+                    }
+                }
+            }
+        }
+
+        .links {
+            @include flex-ac-jc($size-400);
+
+            li {
+                cursor: pointer;
+                
+                svg {
+                    border-radius: 100%;
+                    padding: $size-200;
+                    background: white;
+                }
+            }
+        }
+    }
+
+    &_bottom {
+        p {
+            height: auto;
+            overflow: hidden;
+            line-height: $size-600;
+            color: $clr-neutral-300;
+        }
+    }
+}
+
+@include min-max-width(max, 50em) {
+    .product {
+        &_top {
+            &_second,
+            &_third {
+                display: none;
+            }
+
+            .links {
+                li:not(:first-child) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
