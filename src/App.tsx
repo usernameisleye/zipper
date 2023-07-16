@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { FiSearch } from "react-icons/fi"
 import { Filter, Product } from "./components"
 import { 
@@ -7,9 +7,29 @@ import {
   price, 
   score 
 } from "./constants"
+import { Products } from "./types"
 
 function App() {
   const ref = useRef(null)
+  const [search, setSearch] = useState("")
+  const [data, setData] = useState<Products[]>([])
+  const [filterValue, setFilterValue] = useState("")
+
+  useEffect(() => {
+    const getData = async () => {
+      const r = await fetch(`https://dummyjson.com/products?limit=10`)
+      const { products } = await r.json()
+
+      setData(products)
+    }
+
+    getData()
+  }, [])
+
+  const filter = data.filter(data => data.title.toLowerCase().includes(search.toLowerCase()))
+  const searchProducts = (title: string) => {
+    return title.toLowerCase().includes(search.toLowerCase())
+  }
 
   return (
     <main id="main-content">
@@ -34,7 +54,9 @@ function App() {
               <div className="search_div_input">
                 <input 
                   type="text" 
+                  value={search}
                   className="search"
+                  onChange={e => setSearch(e.target.value)}
                   placeholder="Enter product, categories, service name..."
                 />
 
@@ -72,17 +94,17 @@ function App() {
         </div>
 
         <div className="products">
-          <div className="product-wrapper">
-            <Product />
-          </div>
-
-          <div className="product-wrapper">
-            <Product />
-          </div>
-
-          <div className="product-wrapper">
-            <Product />
-          </div>
+          {filter.length > 0 ? (
+            data
+            .filter(data => searchProducts(data.title))
+            .map(data => (
+              <div key={data.id} className="product-wrapper">
+                <Product data={data} />
+              </div>
+            ))
+          ) : (
+            <h2 className="empty">No products matching <code>{search}</code></h2>
+          )}
         </div>
       </section>
     </main>

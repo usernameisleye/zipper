@@ -5,12 +5,19 @@
 
     &_top {
         @include flex-ac-sb;
-        flex-wrap: wrap;
         gap: $size-400;
+        flex-wrap: wrap;
         padding-block: $size-400;
 
         &_first {
             @include flex-ac-jc($size-400);
+
+            img {
+                object-fit: cover;
+                width: $size-900;
+                height: $size-800 * 1.2;
+                border-radius: $size-200;
+            }
 
             .info {
                 font-weight: $fw-medium;
@@ -20,6 +27,7 @@
 
                 div {
                     @include flex-ac-jc($size-200);
+                    justify-content: flex-start;
 
                     .icon {
                         color: $clr-accent;
@@ -53,6 +61,8 @@
             overflow: hidden;
             line-height: $size-600;
             color: $clr-neutral-300;
+            padding-block: $size-400;
+            border-top: 1px solid $clr-neutral-100;
         }
     }
 }
@@ -60,6 +70,7 @@
 @include min-max-width(max, 50em) {
     .product {
         &_top {
+            flex-wrap: nowrap;
             &_second,
             &_third {
                 display: none;

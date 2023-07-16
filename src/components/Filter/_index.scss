@@ -21,13 +21,13 @@
         &_options {
             position: absolute;
             z-index: 50;
-            width: 100%;
             overflow: auto;
             list-style: none;
+            min-width: 100%;
+            width: max-content;
             background: white;
             border-radius: $size-200;
             padding-block: $size-100;
-            max-height: $size-900 * 2;
             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
 
             .option {
@@ -35,6 +35,11 @@
                 cursor: pointer;
                 user-select: none;
                 padding: $size-100 $size-200;
+
+                &:first-child {
+                    pointer-events: fill;
+                    background: $clr-neutral-200;
+                }
             }
 
             // Conditional classes

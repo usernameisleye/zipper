@@ -114,6 +114,17 @@ header {
             padding: $size-300;
             border-bottom: 1px solid $clr-neutral-100;
         }
+
+        .empty {
+            padding: $size-500;
+            font-size: $fs-medium;
+            font-weight: $fw-medium;
+            text-decoration: underline;
+
+            code {
+                color: $clr-accent;
+            }
+        }
     }
 }
 
