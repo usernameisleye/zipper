@@ -3,7 +3,7 @@ import { FilterProps } from "../../types"
 import { Listbox } from "@headlessui/react"
 import { FiChevronDown } from "react-icons/fi"
 
-const Filter = ({ title, options, filter } : FilterProps) => {
+const Filter = ({ options } : FilterProps) => {
   const [selected, setSelected] = useState(options[0])
   
   

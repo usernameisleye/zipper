@@ -13,7 +13,6 @@ function App() {
   const ref = useRef(null)
   const [search, setSearch] = useState("")
   const [data, setData] = useState<Products[]>([])
-  const [filterValue, setFilterValue] = useState("")
 
   useEffect(() => {
     const getData = async () => {
